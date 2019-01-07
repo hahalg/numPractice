@@ -14,9 +14,9 @@ from pylab import mpl
 from PyQt5.QtGui import *
 # from PyQt5.QtWidgets import QAbstractItemView,QTableWidgetItem,QTableWidget,QDesktopWidget,QHeaderView
 from PyQt5.QtWidgets import QGraphicsPixmapItem, QGraphicsScene
+from SQUi_act_do_toolbuttom import *
 sys.path.append("..")
 from sqlib.sq_read_lib import readExcel
-from SQUi_act_do_toolbuttom import *
 
 mpl.rcParams['font.sans-serif'] = ['FangSong'] # 指定默认字体
 mpl.rcParams['axes.unicode_minus'] = False # 解决保存图像是负号'-'显示为方块的问题
@@ -25,7 +25,6 @@ mpl.rcParams['figure.subplot.bottom'] = 0.1
 mpl.rcParams['figure.subplot.right'] = 0.99
 mpl.rcParams['figure.subplot.top'] = 0.99       
  
-
 class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
     def __init__(self):
         super(sq_win,self).__init__() 
@@ -154,8 +153,6 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
         scene.addItem(item)
         self.graphicsView.setScene(scene)                        #将场景添加至视图
 
-
-
     def __del__(self):
         self.db.close()
         if self.plt is not None:
@@ -172,6 +169,7 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
                 m_num = '0'+m_num
             m_relist.append(m_num)
         return m_relist,random.choice(m_relist)
+        
     def _rander(self,datalist):
         '''生成图片'''
         i = 0
@@ -180,9 +178,6 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
             i+=1
             m_file = f"photo/{data}.jpg"
             exec('self.toolButton_{}.setIcon(QIcon(m_file))'.format(i))
-
-
-
 
 
 if __name__ == '__main__':
