@@ -39,7 +39,7 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
         self.pushButton_2.clicked.connect(self.letsRun)
         self.pushButton.clicked.connect(self.showAnalysis)
         for i in range(12):
-            exec('self.toolButton_{}.clicked.connect(self.judgeRight)'.format(i+1))
+            exec(f'self.toolButton_{i+1}.clicked.connect(self.judgeRight)')
 
 
     def _data_init(self):
@@ -178,7 +178,7 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
         for data in datalist:
             i+=1
             m_file = f"photo/{data}.jpg"
-            exec('self.toolButton_{}.setIcon(QIcon(m_file))'.format(i))
+            exec(f'self.toolButton_{i}.setIcon(QIcon(m_file))')
 
 
 if __name__ == '__main__':
