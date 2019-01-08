@@ -15,8 +15,9 @@ from PyQt5.QtGui import *
 # from PyQt5.QtWidgets import QAbstractItemView,QTableWidgetItem,QTableWidget,QDesktopWidget,QHeaderView
 from PyQt5.QtWidgets import QGraphicsPixmapItem, QGraphicsScene
 from SQUi_act_do_toolbuttom import *
-sys.path.append("..")
-from sqlib.sq_read_lib import readExcel
+# sys.path.append("..")
+# from sqlib.sq_read_lib import readExcel
+from sq_read_lib import readExcel
 
 mpl.rcParams['font.sans-serif'] = ['FangSong'] # 指定默认字体
 mpl.rcParams['axes.unicode_minus'] = False # 解决保存图像是负号'-'显示为方块的问题
