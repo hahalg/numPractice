@@ -2,16 +2,17 @@
 
 # Form implementation generated from reading ui file 'd:\lgwork\py\numcode\act_do_toolbuttom.ui'
 #
-# Created by: PyQt5 UI code generator 5.11.2
+# Created by: PyQt5 UI code generator 5.12.2
 #
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1075, 700)
+        MainWindow.resize(1112, 700)
         MainWindow.setMinimumSize(QtCore.QSize(1075, 700))
         MainWindow.setMaximumSize(QtCore.QSize(1200, 700))
         MainWindow.setFocusPolicy(QtCore.Qt.TabFocus)
@@ -24,7 +25,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setAutoFillBackground(True)
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
-        self.gridLayoutWidget.setGeometry(QtCore.QRect(30, 0, 881, 701))
+        self.gridLayoutWidget.setGeometry(QtCore.QRect(30, 0, 923, 701))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setSizeConstraint(QtWidgets.QLayout.SetNoConstraint)
@@ -106,7 +107,7 @@ class Ui_MainWindow(object):
         self.toolButton_3.setObjectName("toolButton_3")
         self.gridLayout.addWidget(self.toolButton_3, 1, 3, 1, 1)
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(950, 10, 101, 251))
+        self.label.setGeometry(QtCore.QRect(990, 10, 101, 251))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(72)
@@ -128,12 +129,12 @@ class Ui_MainWindow(object):
         self.pb_quit.setObjectName("pb_quit")
         self.verticalLayout.addWidget(self.pb_quit)
         self.graphicsView = QtWidgets.QGraphicsView(self.centralwidget)
-        self.graphicsView.setGeometry(QtCore.QRect(930, 470, 131, 91))
+        self.graphicsView.setGeometry(QtCore.QRect(960, 470, 131, 91))
         self.graphicsView.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.graphicsView.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.graphicsView.setObjectName("graphicsView")
         self.label_13 = QtWidgets.QLabel(self.centralwidget)
-        self.label_13.setGeometry(QtCore.QRect(930, 450, 131, 20))
+        self.label_13.setGeometry(QtCore.QRect(960, 450, 131, 20))
         font = QtGui.QFont()
         font.setFamily("Agency FB")
         font.setPointSize(11)
@@ -142,7 +143,7 @@ class Ui_MainWindow(object):
         self.label_13.setAlignment(QtCore.Qt.AlignCenter)
         self.label_13.setObjectName("label_13")
         self.label_OK = QtWidgets.QLabel(self.centralwidget)
-        self.label_OK.setGeometry(QtCore.QRect(1040, 430, 31, 31))
+        self.label_OK.setGeometry(QtCore.QRect(1050, 460, 31, 31))
         self.label_OK.setText("")
         self.label_OK.setObjectName("label_OK")
         MainWindow.setCentralWidget(self.centralwidget)
@@ -153,7 +154,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "SQ——数字编码练习"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "数字编码练习"))
         self.toolButton_4.setText(_translate("MainWindow", "4"))
         self.toolButton_6.setText(_translate("MainWindow", "6"))
         self.toolButton_5.setText(_translate("MainWindow", "5"))
@@ -172,4 +173,5 @@ class Ui_MainWindow(object):
         self.pb_quit.setText(_translate("MainWindow", "&Quit"))
         self.pb_quit.setShortcut(_translate("MainWindow", "Alt+Q"))
         self.label_13.setText(_translate("MainWindow", "结果"))
+
 

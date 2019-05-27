@@ -1,5 +1,5 @@
 # coding=utf-8
-# SQ数字编码练习
+# LG数字编码练习
 # 编写时间：2019-01-02 作者：SQ
 # 主程序
 
@@ -12,6 +12,7 @@ import time
 import cv2
 from pylab import mpl
 from PyQt5.QtGui import *
+# from PyQt5.QtCore import Qt
 # from PyQt5.QtWidgets import QAbstractItemView,QTableWidgetItem,QTableWidget,QDesktopWidget,QHeaderView
 from PyQt5.QtWidgets import QGraphicsPixmapItem, QGraphicsScene
 from SQUi_act_do_toolbuttom import *
@@ -33,6 +34,7 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
         self.setupUi(self)
         self._setClick()
         self.letsRun()
+        # self._drawRW()
 
     def _setClick(self):
         '''设置点击事件'''
@@ -47,6 +49,7 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
         self.plt = None
         self.showdatas = []
         self.trueNum = ''
+        self.titleText = ''
         self.data = readExcel('numcode.xlsx','Sheet1')
         # print('data:',self.data)
         #打印sheet的名称，行数，列数
@@ -82,20 +85,30 @@ class sq_win(QtWidgets.QMainWindow,Ui_MainWindow):
         # print(sender.text() + ' was pressed')
         m_rv = self.showdatas.index(self.trueNum)+1
         # print(f'ture num is :{m_rv}')
+        m_jr = True     #对错
         if sender.text()==str(m_rv):
             # print('you are right!')
             self._appendData(self.trueNum)
             m_file = f"photo/r.png"
+            # self.label_OK.setText('Yes')
+
         else:
             # print('you are stupid!')
             self._appendData(self.trueNum,type='err')
             m_file = f"photo/w.png"
+            # self.label_OK.setText('No')
+            m_jr = False
+
         m_Img = QtGui.QPixmap(m_file)
         self.label_OK.setPixmap(m_Img)
+        self.label_OK.setStyleSheet('background:transparent')
+        self.label_OK.setAutoFillBackground(True)
         self.label_OK.setScaledContents(True)
 
         m_str = self.data.cell(int(self.trueNum),1).value
-        self.setWindowTitle(self.trueNum+' '+m_str)
+        m_jr_str = '' if m_jr else 'X'
+        self.titleText = self.trueNum+' '+m_str+m_jr_str+' | '+self.titleText
+        self.setWindowTitle(self.titleText[:200])
         self.label_13.setText(self.trueNum+' '+m_str)
         self._setGraphView()
         self.letsRun()
